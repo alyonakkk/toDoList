@@ -38,6 +38,10 @@ body{
     margin: 0;
 }
 
+[v-cloak] {
+    display: none;
+}
+
 /* header */
 
 .header{
