@@ -8,6 +8,10 @@ body {
   margin: 0;
 }
 
+[v-cloak] {
+  display: none;
+}
+
 /* header */
 .header {
   display: -webkit-box;
@@ -143,7 +147,8 @@ body {
   padding: 20px 150px;
 }
 
-.main__to-do-list .task, .main__to-do-list .done {
+.main__to-do-list .task,
+.main__to-do-list .done {
   overflow-y: auto;
   border: 1px solid #858585;
   border-radius: 10px;
@@ -152,7 +157,8 @@ body {
   max-height: 480px;
 }
 
-.main__to-do-list .task .title, .main__to-do-list .done .title {
+.main__to-do-list .task .title,
+.main__to-do-list .done .title {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -164,7 +170,8 @@ body {
           align-items: center;
 }
 
-.main__to-do-list .task .counter, .main__to-do-list .done .counter {
+.main__to-do-list .task .counter,
+.main__to-do-list .done .counter {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -181,13 +188,15 @@ body {
   margin: 0;
 }
 
-.main__to-do-list .task .list, .main__to-do-list .done .list {
+.main__to-do-list .task .list,
+.main__to-do-list .done .list {
   list-style: none;
   margin: 0;
   padding: 0;
 }
 
-.main__to-do-list .task .list li, .main__to-do-list .done .list li {
+.main__to-do-list .task .list li,
+.main__to-do-list .done .list li {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -200,7 +209,8 @@ body {
   margin-bottom: 20px;
 }
 
-.main__to-do-list .task .checkbox, .main__to-do-list .done .checkbox {
+.main__to-do-list .task .checkbox,
+.main__to-do-list .done .checkbox {
   position: absolute;
   z-index: 1;
   opacity: 0;
@@ -209,7 +219,8 @@ body {
   margin: 0;
 }
 
-.main__to-do-list .task .checkbox + label, .main__to-do-list .done .checkbox + label {
+.main__to-do-list .task .checkbox + label,
+.main__to-do-list .done .checkbox + label {
   display: -webkit-inline-box;
   display: -ms-inline-flexbox;
   display: inline-flex;
@@ -218,7 +229,8 @@ body {
           align-items: center;
 }
 
-.main__to-do-list .task .checkbox + label::before, .main__to-do-list .done .checkbox + label::before {
+.main__to-do-list .task .checkbox + label::before,
+.main__to-do-list .done .checkbox + label::before {
   content: ' ';
   display: inline-block;
   border: 1px solid #858585;
@@ -228,18 +240,21 @@ body {
   height: 16px;
 }
 
-.main__to-do-list .task .checkbox:checked + label::before, .main__to-do-list .done .checkbox:checked + label::before {
+.main__to-do-list .task .checkbox:checked + label::before,
+.main__to-do-list .done .checkbox:checked + label::before {
   background-color: #85ecf0;
   border: 1px solid #85ecf0;
   -webkit-box-shadow: 0 0 5px #85ecf0;
           box-shadow: 0 0 5px #85ecf0;
 }
 
-.main__to-do-list .task .checkbox + label:hover::before, .main__to-do-list .done .checkbox + label:hover::before {
+.main__to-do-list .task .checkbox + label:hover::before,
+.main__to-do-list .done .checkbox + label:hover::before {
   border-color: #85ecf0;
 }
 
-.main__to-do-list .task .remove, .main__to-do-list .done .remove {
+.main__to-do-list .task .remove,
+.main__to-do-list .done .remove {
   color: #ff0000;
   font-weight: bold;
   background-color: transparent;
@@ -249,7 +264,8 @@ body {
   padding: 5px 13px;
 }
 
-.main__to-do-list .task .remove:hover, .main__to-do-list .done .remove:hover {
+.main__to-do-list .task .remove:hover,
+.main__to-do-list .done .remove:hover {
   background-color: #ececec8d;
 }
 /*# sourceMappingURL=style.css.map */

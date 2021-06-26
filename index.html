@@ -42,7 +42,7 @@
                 <div class="task">
                     <div class="title">
                         <h3>To Do</h3>
-                        <div class="counter" v-cloak><span v-cloak>{{ needToDo.length }}</span></div>
+                        <div class="counter"><span v-cloak>{{ needToDo.length }}</span></div>
                     </div>
                     <hr>
                     <ul class="list">
@@ -50,7 +50,7 @@
                             <div class="container-left">
                                 <input type="checkbox" id="checkbox" class="checkbox"
                                     v-on:change="check(index, 'todo')">
-                                <label for="checkbox" v-cloak>{{ i.task }}</label>
+                                <label for="checkbox"><span v-cloak>{{ i.task }}</span></label>
                             </div>
                             <div class="container-right">
                                 <button type="button" class="remove"
@@ -63,7 +63,7 @@
                 <div class="done">
                     <div class="title">
                         <h3>Done</h3>
-                        <div class="counter" v-cloak><span>{{ wellDone.length }}</span></div>
+                        <div class="counter" v-cloak><span v-cloak>{{ wellDone.length }}</span></div>
                     </div>
                     <hr>
                     <ul class="list">
@@ -71,7 +71,7 @@
                             <div class="container-left">
                                 <input type="checkbox" id="checkbox" class="checkbox" v-on:change="check(index, 'done')"
                                     checked>
-                                <label for="checkbox" v-cloak>{{ i.task }}</label>
+                                <label for="checkbox"><span v-cloak>{{ i.task }}</span></label>
                             </div>
                             <div class="container-right">
                                 <button type="button" class="remove"
