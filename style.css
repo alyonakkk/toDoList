@@ -1,0 +1,255 @@
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+}
+
+/* header */
+.header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 90px;
+  color: #85ecf0;
+  background-color: #333333;
+  padding: 20px 150px;
+}
+
+/* main */
+.main {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.main__window {
+  display: none;
+  width: 100%;
+  height: 100%;
+}
+
+.main__window .window {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: #c0c0c037;
+  padding: 15px;
+}
+
+.main__window .form {
+  position: relative;
+  width: 600px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  font-size: 24px;
+  font-weight: bold;
+  padding: 80px 40px;
+  z-index: 1;
+}
+
+.main__window .form .input {
+  width: 300px;
+  border-radius: 5px;
+  padding: 11px;
+  outline: none;
+  -webkit-transition: 0.2s border;
+  transition: 0.2s border;
+  margin-right: 10px;
+}
+
+.main__window .form .input:focus {
+  border: 1px solid #85ecf0;
+}
+
+.main__window .form .add {
+  color: #333333;
+  background-color: #85ecf0;
+  border: none;
+  border-radius: 5px;
+  font-size: 18px;
+  text-transform: uppercase;
+  padding: 10px 30px;
+  cursor: pointer;
+}
+
+.main__window .form .add:hover {
+  background-color: #333333;
+  color: #85ecf0;
+}
+
+.main__window .form .close {
+  position: absolute;
+  top: 10;
+  right: 15;
+  color: #ff0000;
+  background-color: transparent;
+  border: none;
+  font-weight: bold;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.main__add {
+  text-decoration: none;
+  color: #000000;
+}
+
+.main__add:hover {
+  color: #85ecf0;
+  cursor: pointer;
+}
+
+.main__add h3::before {
+  content: '+';
+  margin-right: 7px;
+}
+
+.main__to-do-list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 40px;
+  font-size: 18px;
+  font-weight: bold;
+  padding: 20px 150px;
+}
+
+.main__to-do-list .task, .main__to-do-list .done {
+  overflow-y: auto;
+  border: 1px solid #858585;
+  border-radius: 10px;
+  padding: 20px;
+  width: 500px;
+  max-height: 480px;
+}
+
+.main__to-do-list .task .title, .main__to-do-list .done .title {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.main__to-do-list .task .counter, .main__to-do-list .done .counter {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 40px;
+  height: 40px;
+  border: 2px solid #858585;
+  border-radius: 50%;
+  margin: 0;
+}
+
+.main__to-do-list .task .list, .main__to-do-list .done .list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.main__to-do-list .task .list li, .main__to-do-list .done .list li {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 20px;
+}
+
+.main__to-do-list .task .checkbox, .main__to-do-list .done .checkbox {
+  position: absolute;
+  z-index: 1;
+  opacity: 0;
+  width: 16px;
+  height: 16px;
+  margin: 0;
+}
+
+.main__to-do-list .task .checkbox + label, .main__to-do-list .done .checkbox + label {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.main__to-do-list .task .checkbox + label::before, .main__to-do-list .done .checkbox + label::before {
+  content: ' ';
+  display: inline-block;
+  border: 1px solid #858585;
+  border-radius: 5px;
+  margin-right: 10px;
+  width: 16px;
+  height: 16px;
+}
+
+.main__to-do-list .task .checkbox:checked + label::before, .main__to-do-list .done .checkbox:checked + label::before {
+  background-color: #85ecf0;
+  border: 1px solid #85ecf0;
+  -webkit-box-shadow: 0 0 5px #85ecf0;
+          box-shadow: 0 0 5px #85ecf0;
+}
+
+.main__to-do-list .task .checkbox + label:hover::before, .main__to-do-list .done .checkbox + label:hover::before {
+  border-color: #85ecf0;
+}
+
+.main__to-do-list .task .remove, .main__to-do-list .done .remove {
+  color: #ff0000;
+  font-weight: bold;
+  background-color: transparent;
+  border: 1px solid #858585;
+  border-radius: 50%;
+  font-size: 18px;
+  padding: 5px 13px;
+}
+
+.main__to-do-list .task .remove:hover, .main__to-do-list .done .remove:hover {
+  background-color: #ececec8d;
+}
+/*# sourceMappingURL=style.css.map */

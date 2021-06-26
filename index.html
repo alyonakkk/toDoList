@@ -1,0 +1,92 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ToDo List</title>
+    <!-- css -->
+    <link rel="stylesheet" href="style.css">
+    <!-- google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div id="app">
+        <header class="header">
+            <div class="header__logo">
+                <h2 class="header__h2">To Do List</h2>
+            </div>
+        </header>
+
+        <main class="main">
+
+            <a href="#" class="main__window" v-bind:style="{display: displayValue}">
+                <div class="window">
+                    <form action="" class="form">
+                        <input type="text" name="input" class="input" v-bind:value="inputValue" v-on:input="handleInput"
+                            v-on:keypress.enter="addTask" placeholder="Your task...">
+                        <button type="button" class="add" v-on:click="addTask">Add</button>
+                        <button type="button" class="close" v-on:click="formClose">x</button>
+                    </form>
+                </div>
+            </a>
+
+            <a href="#" class="main__add" v-on:click="formOpen">
+                <h3>Add Task</h3>
+            </a>
+
+            <div class="main__to-do-list">
+                <div class="task">
+                    <div class="title">
+                        <h3>To Do</h3>
+                        <div class="counter"><span>{{ needToDo.length }}</span></div>
+                    </div>
+                    <hr>
+                    <ul class="list">
+                        <li v-for="(i, index) in needToDo" :key="i.id">
+                            <div class="container-left">
+                                <input type="checkbox" id="checkbox" class="checkbox"
+                                    v-on:change="check(index, 'todo')">
+                                <label for="checkbox">{{ i.task }}</label>
+                            </div>
+                            <div class="container-right">
+                                <button type="button" class="remove"
+                                    v-on:click="removeTask(index, 'todo')"><span>-</span></button>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="done">
+                    <div class="title">
+                        <h3>Done</h3>
+                        <div class="counter"><span>{{ wellDone.length }}</span></div>
+                    </div>
+                    <hr>
+                    <ul class="list">
+                        <li v-for="(i, index) in wellDone" :key="i.id">
+                            <div class="container-left">
+                                <input type="checkbox" id="checkbox" class="checkbox" v-on:change="check(index, 'done')"
+                                    checked>
+                                <label for="checkbox">{{ i.task }}</label>
+                            </div>
+                            <div class="container-right">
+                                <button type="button" class="remove"
+                                    v-on:click="removeTask(index, 'done')"><span>-</span></button>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+        </main>
+    </div>
+</body>
+<!-- js / vue-->
+<script src="https://unpkg.com/vue@next"></script>
+<script src="app.js"></script>
+
+</html>
